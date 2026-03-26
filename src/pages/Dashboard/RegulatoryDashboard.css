@@ -1,0 +1,391 @@
+.grid-main {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 32px;
+  align-items: stretch;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.icon-wrap-sm {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--glass-layer-1);
+  border: 1px solid var(--glass-border);
+}
+
+.icon-wrap-sm svg {
+  width: 20px;
+  height: 20px;
+}
+
+.icon-wrap-sm.primary {
+  color: var(--pharma-primary-light);
+}
+
+.icon-wrap-sm.secondary {
+  color: var(--pharma-success);
+}
+
+.icon-wrap-sm.accent {
+  color: var(--pharma-warning);
+}
+
+.readiness-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.readiness-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  border-radius: 16px;
+  background: var(--glass-layer-1);
+  border: 1px solid var(--glass-border);
+  transition: var(--pharma-transition);
+}
+
+.readiness-card:hover {
+  transform: translateX(4px);
+  background: var(--glass-layer-2);
+  border-color: var(--glass-border-bright);
+}
+
+.readiness-card.is-complete {
+  border-color: rgba(16, 185, 129, 0.3);
+  background: rgba(16, 185, 129, 0.05);
+}
+
+.readiness-indicator {
+  position: relative;
+  width: 12px;
+  height: 12px;
+}
+
+.indicator-dot {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: var(--pharma-text-muted);
+  position: relative;
+  z-index: 1;
+}
+
+.is-complete .indicator-dot {
+  background: var(--pharma-success);
+}
+
+.indicator-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  background: var(--pharma-success);
+  filter: blur(4px);
+  opacity: 0;
+  transition: var(--pharma-transition);
+}
+
+.is-complete .indicator-glow {
+  opacity: 0.6;
+  animation: pulsate 2s infinite;
+}
+
+@keyframes pulsate {
+  0% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.5);
+  }
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+}
+
+.readiness-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.readiness-label {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--pharma-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.readiness-value {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.complete-check {
+  color: var(--pharma-success);
+}
+
+.check-svg {
+  width: 20px;
+  height: 20px;
+}
+
+.state-chip {
+  padding: 4px 12px;
+  border-radius: 99px;
+  font-size: 0.75rem;
+  font-weight: 900;
+  background: var(--glass-layer-2);
+  color: var(--pharma-text-muted);
+  border: 1px solid var(--glass-border);
+}
+
+.state-chip.draft {
+  background: rgba(148, 163, 184, 0.1);
+}
+
+.state-chip.ready_for_review {
+  background: rgba(37, 99, 235, 0.1);
+  color: var(--pharma-primary-light);
+  border-color: var(--pharma-primary-light);
+}
+
+.state-chip.submitted {
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--pharma-success);
+  border-color: var(--pharma-success);
+}
+
+.workflow-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.state-active {
+  border-color: var(--pharma-primary-light) !important;
+  background: var(--glass-layer-2) !important;
+  box-shadow: 0 0 15px var(--pharma-primary-glow);
+}
+
+.lock-advisory {
+  display: flex;
+  gap: 16px;
+  padding: 20px;
+  border-radius: 16px;
+  background: var(--glass-layer-2);
+  border: 1px solid var(--glass-border);
+  color: var(--pharma-text-muted);
+  font-size: 0.8rem;
+  line-height: 1.5;\n  font-weight: 600;
+}
+
+.lock-visual {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--glass-layer-1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--pharma-primary-light);
+  flex-shrink: 0;
+}
+
+.lock-svg {
+  width: 18px;
+  height: 18px;
+}
+
+.audit-container {
+  background: var(--glass-layer-1);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  overflow: hidden;
+  height: calc(100% - 60px);
+}
+
+.audit-premium-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.audit-premium-table th {
+  padding: 16px 24px;
+  text-align: left;
+  background: var(--glass-layer-2);
+  color: var(--pharma-text-muted);
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  border-bottom: 2px solid var(--glass-border);
+}
+
+.audit-row {
+  transition: var(--pharma-transition);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.audit-row:hover {
+  background: var(--glass-layer-1);
+}
+
+.audit-row:last-child {
+  border-bottom: none;
+}
+
+.time-cell {
+  padding: 16px 24px;
+  width: 120px;
+}
+
+.time-val {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--pharma-text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.entity-cell {
+  padding: 16px 24px;
+  width: 140px;
+}
+
+.entity-badge {
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: var(--glass-layer-2);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-align: center;
+  border: 1px solid var(--glass-border);
+}
+
+.change-cell {
+  padding: 16px 24px;
+}
+
+.change-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field-name {
+  font-weight: 800;
+  color: var(--pharma-primary-light);
+  font-size: 0.85rem;
+}
+
+.value-transition {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.old-val {
+  color: var(--pharma-text-muted);
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.arrow-icon {
+  width: 14px;
+  height: 14px;
+  color: var(--pharma-text-muted);
+}
+
+.new-val {
+  color: #fff;
+  font-weight: 800;
+  background: rgba(37, 99, 235, 0.1);
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid rgba(37, 99, 235, 0.2);
+}
+
+.empty-audit-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 64px;
+  text-align: center;
+  color: var(--pharma-text-muted);
+}
+
+.integrity-shield {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--glass-layer-1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--pharma-success);
+  border: 1px solid var(--glass-border);
+  margin-bottom: 24px;
+  opacity: 0.6;
+}
+
+.integrity-shield svg {
+  width: 32px;
+  height: 32px;
+}
+
+.empty-audit-state p {
+  font-size: 1rem;
+  font-weight: 600;
+  font-style: italic;
+  max-width: 280px;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
+.mt-8 {
+  margin-top: 2rem;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.glass-glow {
+  box-shadow: 0 0 30px rgba(37, 99, 235, 0.1);
+}

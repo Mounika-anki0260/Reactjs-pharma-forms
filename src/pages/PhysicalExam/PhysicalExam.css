@@ -1,0 +1,293 @@
+.grid-sidebar {
+  grid-template-columns: 1fr 340px;
+  align-items: start;
+  gap: 32px;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.title-icon.hit {
+  color: var(--pharma-primary-light);
+  width: 24px;
+  height: 24px;
+}
+
+.system-card {
+  transition: var(--pharma-transition);
+  cursor: pointer;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid var(--glass-border);
+}
+
+.card-active {
+  border-color: var(--pharma-primary);
+  background: var(--glass-layer-2);
+  box-shadow: 0 0 30px rgba(37, 99, 235, 0.1);
+}
+
+.system-header {
+  padding: 24px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.system-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.system-icon-wrapper {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--glass-layer-1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--pharma-text-muted);
+  transition: var(--pharma-transition);
+}
+
+.card-active .system-icon-wrapper {
+  background: var(--pharma-primary-glow);
+  color: #fff;
+}
+
+.system-icon {
+  width: 22px;
+  height: 22px;
+}
+
+.system-label {
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--pharma-text);
+  letter-spacing: -0.01em;
+}
+
+.card-active .system-label {
+  color: #fff;
+}
+
+.system-status-badge {
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: 99px;
+  text-transform: uppercase;
+  background: var(--glass-layer-1);
+  color: var(--pharma-text-muted);
+  border: 1px solid var(--glass-border);
+}
+
+.system-status-badge.normal {
+  color: var(--pharma-success);
+  background: rgba(16, 185, 129, 0.1);
+  border-color: rgba(16, 185, 129, 0.2);
+}
+
+.system-status-badge.abnormal {
+  color: var(--pharma-danger);
+  background: rgba(244, 63, 94, 0.1);
+  border-color: rgba(244, 63, 94, 0.2);
+}
+
+.system-status-badge.not-done {
+  color: var(--pharma-text-muted);
+  background: var(--glass-layer-1);
+  border-color: var(--glass-border);
+}
+
+.chevron {
+  color: var(--pharma-text-muted);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.chevron.open {
+  transform: rotate(180deg);
+  color: #fff;
+}
+
+.system-details {
+  padding: 32px;
+  background: rgba(15, 23, 42, 0.4);
+  border-top: 1px solid var(--glass-border);
+}
+
+.vitals-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.general-system-grid {
+  display: flex;
+  flex-direction: column;
+}
+
+.system-details textarea {
+  min-height: 120px;
+  width: 100%;
+  resize: vertical;
+}
+
+.metric-circle-container {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto;
+}
+
+.progress-ring {
+  transform: rotate(-90deg);
+}
+
+.progress-ring__circle {
+  transition: stroke-dashoffset 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: drop-shadow(0 0 5px var(--pharma-primary-glow));
+}
+
+.percent-display {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.percent-val {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1;
+}
+
+.percent-label {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: var(--pharma-text-muted);
+  letter-spacing: 0.1em;
+}
+
+.integrity-status {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--pharma-text-muted);
+  font-weight: 500;
+}
+
+.status-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.status-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: var(--glass-layer-1);
+  border: 1px solid transparent;
+  transition: var(--pharma-transition);
+}
+
+.status-row.completed {
+  background: var(--pharma-primary-glow);
+  border-color: var(--glass-border-bright);
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--glass-border);
+  transition: var(--pharma-transition);
+}
+
+.completed .status-dot {
+  background: var(--pharma-primary-light);
+  box-shadow: 0 0 8px var(--pharma-primary-light);
+}
+
+.status-text {
+  flex: 1;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--pharma-text-muted);
+}
+
+.completed .status-text {
+  color: #fff;
+}
+
+.status-check {
+  width: 16px;
+  height: 16px;
+  color: var(--pharma-primary-light);
+}
+
+.last-updated {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--pharma-primary-light);
+  background: var(--pharma-primary-glow);
+  padding: 6px 16px;
+  border-radius: 99px;
+  border: 1px solid var(--glass-border);
+}
+
+.flex-end {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-sm {
+  padding: 10px 20px;
+  font-size: 0.85rem;
+}
+
+.expand-enter {
+  animation: expandIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes expandIn {
+  from {
+    max-height: 0;
+    opacity: 0;
+  }
+  to {
+    max-height: 600px;
+    opacity: 1;
+  }
+}
+
+.sticky-card {
+  position: sticky;
+  top: 0;
+}
+
+.glass-glow {
+  position: relative;
+}
+
+.glass-glow::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.05) 0%, transparent 70%);
+  pointer-events: none;
+}

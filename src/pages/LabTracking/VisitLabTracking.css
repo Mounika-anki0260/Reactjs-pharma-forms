@@ -1,0 +1,106 @@
+.grid-sidebar-left { grid-template-columns: 360px 1fr; gap: 32px; align-items: start; }
+.sticky-sidebar { position: sticky; top: 32px; }
+
+.section-title { display: flex; align-items: center; gap: 16px; }
+.icon-wrap-sm {
+  width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center;
+  background: var(--glass-layer-1); border: 1px solid var(--glass-border);
+}
+.icon-wrap-sm svg { width: 20px; height: 20px; }
+.icon-wrap-sm.primary { color: var(--pharma-primary-light); }
+.icon-wrap-sm.secondary { color: var(--pharma-success); }
+.icon-wrap-sm.accent { color: var(--pharma-warning); }
+
+.input-with-icon { position: relative; }
+.input-icon { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); width: 18px; height: 18px; color: var(--pharma-text-muted); pointer-events: none; }
+.input-with-icon .pharma-input { padding-left: 48px; }
+
+.visit-timeline { border-top: 1px solid var(--glass-border); padding-top: 24px; }
+.timeline-title { font-size: 0.75rem; font-weight: 900; color: var(--pharma-text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 20px; }
+.timeline-scroll { display: flex; flex-direction: column; gap: 12px; max-height: 400px; overflow-y: auto; padding-right: 8px; }
+.timeline-scroll::-webkit-scrollbar { width: 4px; }
+.timeline-scroll::-webkit-scrollbar-thumb { background: var(--glass-border); border-radius: 4px; }
+
+.visit-card {
+  display: flex; align-items: center; gap: 16px; padding: 16px; border-radius: 12px; border: 1px solid var(--glass-border);
+  background: var(--glass-layer-1); cursor: pointer; transition: var(--pharma-transition); position: relative; overflow: hidden;
+}
+.visit-card:hover { transform: translateX(4px); background: var(--glass-layer-2); border-color: var(--pharma-primary-light); }
+.visit-card.active { border-color: var(--pharma-primary); background: var(--glass-layer-2); box-shadow: 0 4px 20px rgba(37, 99, 235, 0.1); }
+
+.visit-marker { width: 4px; height: 24px; background: var(--glass-border); border-radius: 99px; transition: var(--pharma-transition); }
+.active .visit-marker { background: var(--pharma-primary); box-shadow: 0 0 10px var(--pharma-primary-glow); }
+
+.visit-main { flex: 1; display: flex; flex-direction: column; gap: 4px; }
+.visit-header { display: flex; justify-content: space-between; align-items: baseline; }
+.visit-name { font-weight: 700; color: var(--pharma-text); }
+.visit-day { font-size: 0.7rem; font-weight: 800; color: var(--pharma-primary-light); }
+.visit-date { font-size: 0.8rem; color: var(--pharma-text-muted); }
+
+.chevron-icon { width: 14px; height: 14px; color: var(--pharma-text-muted); opacity: 0; transition: var(--pharma-transition); }
+.visit-card:hover .chevron-icon, .active .chevron-icon { opacity: 1; transform: translateX(2px); }
+
+.lab-input-card { background: var(--glass-layer-1); padding: 24px; border-radius: 16px; border: 1px solid var(--glass-border); transition: var(--pharma-transition); }
+.lab-input-card:focus-within { background: var(--glass-layer-2); border-color: var(--pharma-primary-light); box-shadow: 0 8px 32px rgba(0,0,0,0.1); }
+.lab-meta { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 16px; }
+.lab-meta label { font-size: 0.85rem; font-weight: 700; color: var(--pharma-text-muted); }
+.unit-badge { font-size: 0.7rem; font-weight: 900; color: var(--pharma-primary-light); background: rgba(37, 99, 235, 0.1); padding: 2px 8px; border-radius: 4px; }
+.pharma-input-large { font-size: 1.5rem; font-weight: 800; height: auto; padding: 12px 20px; }
+.range-info { display: flex; gap: 8px; font-size: 0.75rem; font-weight: 600; }
+.range-label { color: var(--pharma-text-muted); }
+.range-val { color: var(--pharma-success); }
+
+.trend-dashboard { background: var(--glass-layer-1); border: 1px solid var(--glass-border); border-radius: 20px; padding: 32px; position: relative; overflow: hidden; }
+.trend-meta { display: flex; justify-content: space-between; align-items: flex-start; }
+.trend-label-group { display: flex; flex-direction: column; gap: 4px; }
+.trend-subject { font-size: 1.1rem; font-weight: 800; color: #fff; }
+.trend-period { font-size: 0.8rem; color: var(--pharma-text-muted); font-weight: 600; }
+
+.trend-status-badge { display: flex; align-items: center; gap: 8px; padding: 6px 16px; border-radius: 99px; font-size: 0.75rem; font-weight: 800; }
+.trend-status-badge.stable { background: rgba(16, 185, 129, 0.1); color: var(--pharma-success); border: 1px solid rgba(16, 185, 129, 0.2); }
+.trend-status-badge.increasing { background: rgba(244, 63, 94, 0.1); color: var(--pharma-danger); border: 1px solid rgba(244, 63, 94, 0.2); }
+.trend-status-badge.decreasing { background: rgba(37, 99, 235, 0.1); color: var(--pharma-primary-light); border: 1px solid rgba(37, 99, 235, 0.2); }
+.trend-arrow { width: 16px; height: 16px; }
+
+.chart-container { height: 200px; display: flex; gap: 32px; position: relative; padding-left: 40px; }
+.chart-y-axis { position: absolute; left: 0; top: 0; bottom: 0; width: 30px; display: flex; flex-direction: column; justify-content: space-between; font-size: 0.7rem; font-weight: 700; color: var(--pharma-text-muted); text-align: right; }
+.chart-bars { flex: 1; display: flex; align-items: flex-end; justify-content: space-around; border-bottom: 2px solid var(--glass-border); padding-bottom: 4px; }
+.chart-bar-wrapper { flex: 1; max-width: 40px; display: flex; justify-content: center; height: 100%; border-radius: 6px 6px 0 0; }
+.chart-bar-glow {
+  width: 100%; min-height: 4px; border-radius: 6px 6px 0 0; position: relative;
+  background: linear-gradient(to top, var(--pharma-primary), var(--pharma-primary-light));
+  box-shadow: 0 0 20px var(--pharma-primary-glow); transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.chart-bar-glow:hover { opacity: 0.9; transform: scaleX(1.1); }
+.bar-value { position: absolute; top: -28px; left: 50%; transform: translateX(-50%); font-size: 0.75rem; font-weight: 800; color: #fff; }
+.bar-tooltip {
+  position: absolute; top: -50px; left: 50%; transform: translateX(-50%); background: #fff; color: #000;
+  padding: 4px 8px; border-radius: 6px; font-size: 0.7rem; font-weight: 800; white-space: nowrap;
+  opacity: 0; transition: var(--pharma-transition); pointer-events: none;
+}
+.chart-bar-glow:hover .bar-tooltip { opacity: 1; transform: translateX(-50%) translateY(-5px); }
+
+.chart-x-axis { margin-left: 40px; margin-top: 12px; display: flex; justify-content: space-around; font-size: 0.75rem; font-weight: 700; color: var(--pharma-text-muted); }
+
+.alert-strip { display: flex; gap: 16px; padding: 20px 24px; border-radius: 16px; font-size: 0.9rem; line-height: 1.6; }
+.alert-strip.warning { background: rgba(245, 158, 11, 0.05); border: 1px solid rgba(245, 158, 11, 0.2); color: var(--pharma-warning); }
+.alert-icon { width: 24px; height: 24px; flex-shrink: 0; }
+
+.empty-card { height: 100%; min-height: 600px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 64px 32px; }
+.empty-state-visual { position: relative; margin-bottom: 32px; }
+.pulse-circle { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80px; height: 80px; background: var(--pharma-primary-glow); border-radius: 50%; animation: pulse-glow 3s infinite; }
+.empty-icon { width: 64px; height: 64px; color: var(--pharma-text-muted); position: relative; z-index: 1; }
+
+@keyframes pulse-glow {
+  0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.3; }
+  50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.1; }
+  100% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.3; }
+}
+
+.pulse-pill { position: relative; padding-left: 32px; border-color: rgba(37, 99, 235, 0.3); color: var(--pharma-primary-light); }
+.pill-dot { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; border-radius: 50%; background: var(--pharma-primary-light); box-shadow: 0 0 10px var(--pharma-primary-light); animation: blink 1.5s infinite; }
+
+@keyframes blink { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
+
+.min-h-600 { min-height: 600px; }
+.my-12 { margin-top: 48px; margin-bottom: 48px; }
